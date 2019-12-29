@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Skeleton 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130902
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css">
+    </link>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.theme.default.min.css">
+    </link>
+    <LINK REL=stylesheet HREF="3d.css" TYPE="text/css">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/owl.carousel.min.js"></script>
+
+    <style>
+        .item {
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: 0 0 2em 0;
+        }
+
+        b {
+            margin: 0;
+            padding: 0;
+            float: left;
+            text-align: justify;
+            height: 150px;
+            width: 0%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "montserrat";
+            background-image: linear-gradient(125deg, #2c3e50, #27ae60, #2980b9, #e74c3c, #8e44ad);
+            background-size: 2000%;
+            animation: bganimation 15s infinite;
+        }
+
+        .text {
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 350px 0;
+            font-size: 22px;
+        }
+
+        @keyframes bganimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                items: 1,
+                autoplay: true,
+                nav: false,
+            });
+        });
+    </script>
+    <script>
+        var taipei = ["28", "24", "24", "24", "20", "20", "20", "16", "16", "16", "16", "16", "20", "20", "24", "24", "28", "28", "28", "32", "28", "28", "28", "24",
+            "20", "20", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "20", "20", "20", "20", "24", "24", "24", "28", "28", "28", "32", "32", "36", "40",
+            "24", "24", "24", "24", "24", "20", "20", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "20", "20",
+            "20", "20", "20", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "20", "20", "24", "24", "28", "28", "32", "16", "20", "20", "20", "24",
+            "32", "28", "28", "28", "24", "24", "20", "20", "20", "16", "16", "16", "16", "16", "16", "16", "20", "20", "20", "24", "24"];
+
+        var nangang = ["32", "32", "28", "28", "28", "24", "24", "24", "20", "20", "24", "24", "24", "28", "24", "24", "24", "20", "20", "20", "16", "16", "16", "16",
+            "24", "24", "24", "20", "24", "24", "24", "24", "24", "24", "24", "28", "28", "28", "32", "32", "32", "36", "36", "36", "40", "40", "40", "44", "44", "44", "48", "48",
+            "36", "36", "36", "36", "32", "32", "32", "28", "28", "24", "24", "28", "24", "28", "24", "24", "24", "24", "24", "28",
+            "32", "32", "32", "28", "24", "24", "20", "24", "24", "24", "28", "28", "28", "32", "32", "32", "36", "36", "40", "40", "44", "28", "32", "32", "32", "36",
+            "44", "44", "40", "40", "36", "36", "36", "32", "32", "28", "24", "24", "24", "20", "20", "20", "20", "16", "16", "16", "16", "16"];
+
+        var taipei_time = ["26", "24", "23", "21", "19", "17", "15", "13", "10", "5", "8", "13", "16", "19", "22", "24", "25", "27", "29", "30", "30", "28", "26", "20",
+            "16", "14", "12", "10", "8", "7", "3", "2", "2", "3", "4", "6", "9", "11", "13", "14", "16", "18", "19", "21", "27", "24", "26", "28", "31", "34", "37",
+            "22", "20", "18", "24", "16", "14", "13", "10", "9", "7", "3", "6", "3", "6", "2", "6", "8", "10", "13", "15",
+            "22", "20", "18", "16", "7", "7", "3", "6", "9", "9", "4", "9", "11", "13", "15", "18", "20", "22", "24", "27", "30", "12", "14", "16", "18", "20",
+            "27", "23", "21", "19", "16", "14", "12", "10", "9", "5", "3", "2", "3", "5", "7", "8", "10", "12", "14", "16", "18", "20"];
+
+        var nangang_time = ["26", "24", "23", "21", "19", "17", "15", "13", "10", "5", "8", "13", "16", "19", "22", "24", "25", "27", "29", "30", "30", "28", "26", "20",
+            "16", "14", "12", "10", "8", "7", "3", "2", "2", "3", "4", "6", "9", "11", "13", "14", "16", "18", "19", "21", "27", "24", "26", "28", "31", "34", "37",
+            "22", "20", "18", "24", "16", "14", "13", "10", "9", "7", "3", "6", "3", "6", "2", "6", "8", "10", "13", "15",
+            "22", "20", "18", "16", "7", "7", "3", "6", "9", "9", "4", "9", "11", "13", "15", "18", "20", "22", "24", "27", "30", "12", "14", "16", "18", "20",
+            "27", "23", "21", "19", "16", "14", "12", "10", "9", "5", "3", "2", "3", "5", "7", "8", "10", "12", "14", "16", "18", "20"]
+
+        function cmp_lower() {
+            //預設從基隆出發
+            //台北-南港 火車票價: 自強號 $23, 莒光 $18, 區間車 $15
+            var print_cost = "", t_taipei = "", t_nangang = "";//initialize
+            var message1 = "", station1 = "";
+
+            t_taipei += taipei[document.getElementById("location").value];
+            t_nangang += nangang[document.getElementById("location").value];
+
+            if (t_taipei > t_nangang) {
+                print_cost = t_nangang;
+                station1 = "南港";
+            }
+            else if (t_taipei <= t_nangang) {
+                print_cost = t_taipei;
+                station1 = "臺北";
+            }
+            message1 += "<p>" + print_cost + "</p>" + station1 + "<hr>";
+
+            document.getElementById("message1").innerHTML = message1;
+        }
+        function cmp_lower_time() {
+            var print_time = "", taipei = "", nangang = "";
+            var message2 = "", station2 = "";
+
+            taipei += taipei_time[document.getElementById("location").value];
+            nangang += nangang_time[document.getElementById("location").value];
+
+            if (taipei > nangang) {
+                print_time = nangnag;
+                station2 = "南港";
+            }
+            else {
+                print_time = taipei;
+                station2 = "臺北";
+            }
+            message2 += "<p>" + print_time + "</p>" + station2 + "<hr>";
+            document.getElementById("message2").innerHTML = message2;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="page" class="container">
+        <div id="header">
+            <div id="menu">
+                <ul>
+                    <li class="current_page_item"><a href="#" accesskey="1" title="">主頁面</a></li>
+                    <li><a href="#location" accesskey="2" title="">最少花費</a></li>
+                    <li><a href="#location" accesskey="3" title="">最省路徑</a></li>
+                    <li><a href="#copyright" accesskey="4" title="">參考資料</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <!-- <div class="pics"> 
+                <img src="1.jpg" alt="" width="350" height="250"> 
+                <img src="2.jpg" alt="" width="350" height="250">
+                <img src="3.jpg" alt="" width="350" height="250">
+            </div> -->
+            <div class="owl-carousel">
+                <div class="item"><img src="image/douliu_trainStation.jpg"></div>
+                <div class="item"><img src="image/1.jpg"></div>
+                <div class="item"><img src="image/222.jpg"></div>
+                <div class="item"><img src="image/4.jpg"></div>
+                <div class="item"><img src="image/55.jpg"></div>
+            </div>
+            <!-- <div id="banner">
+                <img src="1.jpg" alt="" class="image-full" />
+            </div> -->
+            <div id="welcome">
+                <div class="title">
+                    <h2>Transportation from Keelung to Taipei</h2>
+                    <!-- <span class="byline">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna
+                            congue</span> -->
+                </div>
+                <p style="font-size: 120%;">你是一個精打計算的人嗎？歡迎您來到這個網站，只要選擇您的目的地，我們將提供您最省時與花費最少車資的路徑</p
+                    style="font-size: 120%;">
+                <ul class="actions">
+                    <li><a href="#" class="button">Etiam posuere</a></li>
+                </ul>
+            </div>
+            <div id="featured">
+                <div class="title">
+                    <h2>操作說明</h2>
+                </div>
+                <ul class="style1">
+                    <li class="first">
+                        <p class="date"><a href="#"><b>第一步</b></a></p>
+                        <h2>選擇方案</h2>
+                        <p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et,
+                            tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper
+                            eleifend. Etiam non felis. Donec ut ante.</p>
+                    </li>
+                    <li>
+                        <p class="date"><a href="#"><b>第二步</b></a></p>
+                        <h2>點選終點站</h2>
+                        <p>Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus
+                            egestas at sem. Mauris quam enim, molestie. Donec leo, vivamus fermentum nibh in augue
+                            praesent congue rutrum.</p>
+                    </li>
+                    <li>
+                        <p class="date"><a href="#"><b>第三步</b></a></p>
+                        <h2>更多功能</h2>
+                        <p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et,
+                            tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper
+                            eleifend. Etiam non felis. Donec ut ante.</p>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <button onclick="cmp_lower()">start_min_cost</button><br>
+                <button onclick="cmp_lower_time()">start_min_time</button><br>
+                <button onclick="window.location.reload()">reload</button><br>
+
+                <select name="location" id='location'>
+                    <option>----請選擇----</option>
+                    <optgroup style='background-color: #CC9900;' label='BR 文湖線'>
+                        <option value="0" style='background-color: #CC9900;' value='BR01-019'>BR01 動物園</option>
+                        <option value="1" style='background-color: #CC9900;' value='BR02-018'>BR02 木柵</option>
+                        <option value="2" style='background-color: #CC9900;' value='BR03-017'>BR03 萬芳社區</option>
+                        <option value="3" style='background-color: #CC9900;' value='BR04-016'>BR04 萬芳醫院</option>
+                        <option value="4" style='background-color: #CC9900;' value='BR05-015'>BR05 辛亥</option>
+                        <option value="5" style='background-color: #CC9900;' value='BR06-014'>BR06 麟光</option>
+                        <option value="6" style='background-color: #CC9900;' value='BR07-013'>BR07 六張犁</option>
+                        <option value="7" style='background-color: #CC9900;' value='BR08-012'>BR08 科技大樓</option>
+                        <option value="8" style='background-color: #CC9900;' value='BR09-011'>BR09 大安</option>
+                        <option value="9" style='background-color: #CC9900;' value='BR10-010'>BR10 忠孝復興</option>
+                        <option value="10" style='background-color: #CC9900;' value='BR11-009'>BR11 南京復興</option>
+                        <option value="11" style='background-color: #CC9900;' value='BR12-008'>BR12 中山國中</option>
+                        <option value="12" style='background-color: #CC9900;' value='BR13-007'>BR13 松山機場</option>
+                        <option value="13" style='background-color: #CC9900;' value='BR14-021'>BR14 大直</option>
+                        <option value="14" style='background-color: #CC9900;' value='BR15-022'>BR15 劍南路</option>
+                        <option value="15" style='background-color: #CC9900;' value='BR16-023'>BR16 西湖</option>
+                        <option value="16" style='background-color: #CC9900;' value='BR17-024'>BR17 港墘</option>
+                        <option value="17" style='background-color: #CC9900;' value='BR18-025'>BR18 文德</option>
+                        <option value="18" style='background-color: #CC9900;' value='BR19-026'>BR19 內湖</option>
+                        <option value="19" style='background-color: #CC9900;' value='BR20-027'>BR20 大湖公園</option>
+                        <option value="20" style='background-color: #CC9900;' value='BR21-028'>BR21 葫洲</option>
+                        <option value="21" style='background-color: #CC9900;' value='BR22-029'>BR22 東湖</option>
+                        <option value="22" style='background-color: #CC9900;' value='BR23-030'>BR23 南港軟體園區</option>
+                        <option value="23" style='background-color: #CC9900;' value='BR24-031'>BR24 南港展覽館</option>
+                    </optgroup>
+                    <optgroup style='background-color: #FD5B56;' label='R 淡水信義線'>
+                        <option value="24" style='background-color: #FD5B56;' value='R02-099'>R02 象山</option>
+                        <option value="25" style='background-color: #FD5B56;' value='R03-100'>R03 台北101/世貿</option>
+                        <option value="26" style='background-color: #FD5B56;' value='R04-101'>R04 信義安和</option>
+                        <option value="27" style='background-color: #FD5B56;' value='R05-011'>R05 大安</option>
+                        <option value="28" style='background-color: #FD5B56;' value='R06-103'>R06 大安森林公園</option>
+                        <option value="29" style='background-color: #FD5B56;' value='R07-134'>R07 東門</option>
+                        <option value="30" style='background-color: #FD5B56;' value='R08-042'>R08 中正紀念堂</option>
+                        <option value="31" style='background-color: #FD5B56;' value='R09-050'>R09 台大醫院</option>
+                        <option value="32" style='background-color: #FD5B56;' value='R10-051'>R10 台北車站</option>
+                        <option value="33" style='background-color: #FD5B56;' value='R11-053'>R11 中山</option>
+                        <option value="34" style='background-color: #FD5B56;' value='R12-054'>R12 雙連</option>
+                        <option value="35" style='background-color: #FD5B56;' value='R13-055'>R13 民權西路</option>
+                        <option value="36" style='background-color: #FD5B56;' value='R14-056'>R14 圓山</option>
+                        <option value="37" style='background-color: #FD5B56;' value='R15-057'>R15 劍潭</option>
+                        <option value="38" style='background-color: #FD5B56;' value='R16-058'>R16 士林</option>
+                        <option value="39" style='background-color: #FD5B56;' value='R17-059'>R17 芝山</option>
+                        <option value="40" style='background-color: #FD5B56;' value='R18-060'>R18 明德</option>
+                        <option value="41" style='background-color: #FD5B56;' value='R19-061'>R19 石牌</option>
+                        <option value="42" style='background-color: #FD5B56;' value='R20-062'>R20 唭哩岸</option>
+                        <option value="43" style='background-color: #FD5B56;' value='R21-063'>R21 奇岩</option>
+                        <option value="44" style='background-color: #FD5B56;' value='R22-064'>R22 北投</option>
+                        <option value="45" style='background-color: #FD5B56;' value='R22A-065'>R22A 新北投</option>
+                        <option value="46" style='background-color: #FD5B56;' value='R23-066'>R23 復興崗</option>
+                        <option value="47" style='background-color: #FD5B56;' value='R24-067'>R24 忠義</option>
+                        <option value="48" style='background-color: #FD5B56;' value='R25-068'>R25 關渡</option>
+                        <option value="49" style='background-color: #FD5B56;' value='R26-069'>R26 竹圍</option>
+                        <option value="50" style='background-color: #FD5B56;' value='R27-070'>R27 紅樹林</option>
+                        <option value="51" style='background-color: #FD5B56;' value='R28-071'>R28 淡水</option>
+                    </optgroup>
+
+                    <optgroup style='background-color: #009900;' label='G 松山新店線'>
+                        <option value="52" style='background-color: #009900;' value='G01-033'>G01 新店</option>
+                        <option value="53" style='background-color: #009900;' value='G02-034'>G02 新店區公所</option>
+                        <option value="54" style='background-color: #009900;' value='G03-035'>G03 七張</option>
+                        <option value="55" style='background-color: #009900;' value='G03A-032'>G03A 小碧潭</option>
+                        <option value="56" style='background-color: #009900;' value='G04-036'>G04 大坪林</option>
+                        <option value="57" style='background-color: #009900;' value='G05-037'>G05 景美</option>
+                        <option value="58" style='background-color: #009900;' value='G06-038'>G06 萬隆</option>
+                        <option value="59" style='background-color: #009900;' value='G07-039'>G07 公館</option>
+                        <option value="60" style='background-color: #009900;' value='G08-040'>G08 台電大樓</option>
+                        <option value="61" style='background-color: #009900;' value='G09-041'>G09 古亭</option>
+                        <option value="62" style='background-color: #009900;' value='G10-042'>G10 中正紀念堂</option>
+                        <option value="63" style='background-color: #009900;' value='G11-043'>G11 小南門</option>
+                        <option value="64" style='background-color: #009900;' value='G12-086'>G12 西門</option>
+                        <option value="65" style='background-color: #009900;' value='G13-105'>G13 北門</option>
+                        <option value="66" style='background-color: #009900;' value='G14-053'>G14 中山</option>
+                        <option value="67" style='background-color: #009900;' value='G15-132'>G15 松江南京</option>
+                        <option value="68" style='background-color: #009900;' value='G16-009'>G16 南京復興</option>
+                        <option value="69" style='background-color: #009900;' value='G17-109'>G17 台北小巨蛋</option>
+                        <option value="70" style='background-color: #009900;' value='G18-110'>G18 南京三民</option>
+                        <option value="71" style='background-color: #009900;' value='G19-111'>G19 松山</option>
+                    </optgroup>
+
+                    <optgroup style='background-color: #FFCC66;' label='O 中和新蘆線'>
+                        <option value="72" style='background-color: #FFCC66;' value='O01-048'>O01 南勢角</option>
+                        <option value="73" style='background-color: #FFCC66;' value='O02-047'>O02 景安</option>
+                        <option value="74" style='background-color: #FFCC66;' value='O03-046'>O03 永安市場</option>
+                        <option value="75" style='background-color: #FFCC66;' value='O04-045'>O04 頂溪</option>
+                        <option value="76" style='background-color: #FFCC66;' value='O05-041'>O05 古亭</option>
+                        <option value="77" style='background-color: #FFCC66;' value='O06-134'>O06 東門</option>
+                        <option value="78" style='background-color: #FFCC66;' value='O07-089'>O07 忠孝新生</option>
+                        <option value="79" style='background-color: #FFCC66;' value='O08-132'>O08 松江南京</option>
+                        <option value="80" style='background-color: #FFCC66;' value='O09-131'>O09 行天宮</option>
+                        <option value="81" style='background-color: #FFCC66;' value='O10-130'>O10 中山國小</option>
+                        <option value="82" style='background-color: #FFCC66;' value='O11-055'>O11 民權西路</option>
+                        <option value="83" style='background-color: #FFCC66;' value='O12-128'>O12 大橋頭</option>
+                        <option value="84" style='background-color: #FFCC66;' value='O13-127'>O13 台北橋</option>
+                        <option value="85" style='background-color: #FFCC66;' value='O14-126'>O14 菜寮</option>
+                        <option value="86" style='background-color: #FFCC66;' value='O15-125'>O15 三重</option>
+                        <option value="87" style='background-color: #FFCC66;' value='O16-124'>O16 先嗇宮</option>
+                        <option value="88" style='background-color: #FFCC66;' value='O17-123'>O17 頭前庄</option>
+                        <option value="89" style='background-color: #FFCC66;' value='O18-122'>O18 新莊</option>
+                        <option value="90" style='background-color: #FFCC66;' value='O19-121'>O19 輔大</option>
+                        <option value="91" style='background-color: #FFCC66;' value='O20-180'>O20 丹鳳</option>
+                        <option value="92" style='background-color: #FFCC66;' value='O21-179'>O21 迴龍</option>
+                        <option value="93" style='background-color: #FFCC66;' value='O50-178'>O50 三重國小</option>
+                        <option value="94" style='background-color: #FFCC66;' value='O51-177'>O51 三和國中</option>
+                        <option value="95" style='background-color: #FFCC66;' value='O52-176'>O52 徐匯中學</option>
+                        <option value="96" style='background-color: #FFCC66;' value='O53-175'>O53 三民高中</option>
+                        <option value="97" style='background-color: #FFCC66;' value='O54-174'>O54 蘆洲</option>
+                    </optgroup>
+                    <optgroup style='background-color: #398AFC;' label='BL 板南線'>
+                        <option value="98" style='background-color: #398AFC;' value='BL01-076'>BL01 頂埔</option>
+                        <option value="99" style='background-color: #398AFC;' value='BL02-077'>BL02 永寧</option>
+                        <option value="100" style='background-color: #398AFC;' value='BL03-078'>BL03 土城</option>
+                        <option value="101" style='background-color: #398AFC;' value='BL04-079'>BL04 海山</option>
+                        <option value="102" style='background-color: #398AFC;' value='BL05-080'>BL05 亞東醫院</option>
+                        <option value="103" style='background-color: #398AFC;' value='BL06-081'>BL06 府中</option>
+                        <option value="104" style='background-color: #398AFC;' value='BL07-082'>BL07 板橋</option>
+                        <option value="105" style='background-color: #398AFC;' value='BL08-083'>BL08 新埔</option>
+                        <option value="106" style='background-color: #398AFC;' value='BL09-084'>BL09 江子翠</option>
+                        <option value="107" style='background-color: #398AFC;' value='BL10-085'>BL10 龍山寺</option>
+                        <option value="108" style='background-color: #398AFC;' value='BL11-086'>BL11 西門</option>
+                        <option value="109" style='background-color: #398AFC;' value='BL12-051'>BL12 台北車站</option>
+                        <option value="110" style='background-color: #398AFC;' value='BL13-088'>BL13 善導寺</option>
+                        <option value="111" style='background-color: #398AFC;' value='BL14-089'>BL14 忠孝新生</option>
+                        <option value="112" style='background-color: #398AFC;' value='BL15-010'>BL15 忠孝復興</option>
+                        <option value="113" style='background-color: #398AFC;' value='BL16-091'>BL16 忠孝敦化</option>
+                        <option value="114" style='background-color: #398AFC;' value='BL17-092'>BL17 國父紀念館</option>
+                        <option value="115" style='background-color: #398AFC;' value='BL18-093'>BL18 市政府</option>
+                        <option value="116" style='background-color: #398AFC;' value='BL19-094'>BL19 永春</option>
+                        <option value="117" style='background-color: #398AFC;' value='BL20-095'>BL20 後山埤</option>
+                        <option value="118" style='background-color: #398AFC;' value='BL21-096'>BL21 昆陽</option>
+                        <option value="119" style='background-color: #398AFC;' value='BL22-097'>BL22 南港</option>
+                        <option value="120" style='background-color: #398AFC;' value='BL23-031'>BL23 南港展覽館</option>
+                </select>
+            </div>
+
+            <h1>
+                <div id="message1"></div>
+            </h1>
+
+            <h1>
+                <div id="message2"></div>
+            </h1>
+
+            <div id="copyright">
+                <span style="font-size: 130%;">&copy; 參考資料</span>
+                <span><a href="https://tpu.thinkpower.com.tw/tpu/articleDetails/920" target="_blank">自動輪播圖片</a></span>
+                <span><a href="https://www.metro.taipei/cp.aspx?n=ECEADC266D7120A7"
+                        target="_blank">台北捷運票價及乘車時間</a></span>
+                <span><a href="http://www.jq22.com" target="_blank">jQuery插件庫</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
