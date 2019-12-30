@@ -14,12 +14,11 @@ Released   : 20130902
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Where to transfer</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
     <link href="default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css">
     </link>
@@ -62,6 +61,7 @@ Released   : 20130902
             text-transform: uppercase;
             margin: 350px 0;
             font-size: 22px;
+
         }
 
         @keyframes bganimation {
@@ -77,6 +77,17 @@ Released   : 20130902
                 background-position: 0% 50%;
             }
         }
+
+        ul li a:hover {
+            background-color: #CC9900;
+            font-weight: bold;
+            color: red;
+        }
+
+        span:hover {
+            background-color: coral;
+            color: yellow;
+        }
     </style>
     <script>
         $(document).ready(function () {
@@ -86,6 +97,9 @@ Released   : 20130902
                 autoplay: true,
                 nav: false,
             });
+        });
+        $("button").click(function () {
+            $("p").hide(100);
         });
     </script>
     <script>
@@ -101,6 +115,12 @@ Released   : 20130902
             "32", "32", "32", "28", "24", "24", "20", "24", "24", "24", "28", "28", "28", "32", "32", "32", "36", "36", "40", "40", "44", "28", "32", "32", "32", "36",
             "44", "44", "40", "40", "36", "36", "36", "32", "32", "28", "24", "24", "24", "20", "20", "20", "20", "16", "16", "16", "16", "16"];
 
+        var banqiao = ["36", "36", "36", "32", "32", "28", "28", "28", "28", "24", "24", "28", "28", "32", "36", "36", "36", "40", "40", "40", "40", "40", "36", "36",
+            "28", "28", "28", "28", "24", "24", "24", "24", "20", "24", "24", "24", "24", "28", "28", "32", "32", "32", "36", "36", "36", "36", "40", "40", "40", "44", "44", "48",
+            "36", "32", "32", "36", "32", "28", "28", "24", "24", "24", "24", "20", "20", "20", "24", "24", "24", "28", "28", "32",
+            "32", "28", "28", "28", "24", "24", "24", "24", "24", "24", "24", "24", "28", "28", "28", "32", "32", "36", "36", "40", "40", "28", "28", "32", "32", "32",
+            "24", "20", "20", "16", "16", "16", "16", "16", "20", "20", "20", "24", "24", "24", "28", "28", "28", "28", "32", "32", "36", "36"];
+
         var taipei_time = ["26", "24", "23", "21", "19", "17", "15", "13", "10", "5", "8", "13", "16", "19", "22", "24", "25", "27", "29", "30", "30", "28", "26", "20",
             "16", "14", "12", "10", "8", "7", "3", "2", "2", "3", "4", "6", "9", "11", "13", "14", "16", "18", "19", "21", "27", "24", "26", "28", "31", "34", "37",
             "22", "20", "18", "24", "16", "14", "13", "10", "9", "7", "3", "6", "3", "6", "2", "6", "8", "10", "13", "15",
@@ -113,43 +133,93 @@ Released   : 20130902
             "22", "20", "18", "16", "7", "7", "3", "6", "9", "9", "4", "9", "11", "13", "15", "18", "20", "22", "24", "27", "30", "12", "14", "16", "18", "20",
             "27", "23", "21", "19", "16", "14", "12", "10", "9", "5", "3", "2", "3", "5", "7", "8", "10", "12", "14", "16", "18", "20"]
 
-        function cmp_lower() {
+        var banqiao_time = ["39", "37", "36", "34", "32", "30", "28", "26", "24", "18", "20", "26", "29", "32", "34", "36", "38", "40", "41", "43", "42", "41", "39", "33",
+            "32", "30", "28", "24", "24", "20", "15", "17", "12", "15", "19", "20", "22", "25", "27", "29", "30", "32", "34", "35", "37", "43", "40", "42", "44", "47", "50", "53",
+            "32", "30", "28", "34", "26", "24", "22", "20", "18", "17", "15", "13", "10", "13", "15", "18", "20", "22", "24", "27",
+            "28", "26", "24", "22", "17", "20", "16", "18", "22", "24", "20", "28", "30", "32", "34", "37", "39", "41", "43", "46", "49", "31", "33", "35", "37", "39",
+            "14", "11", "9", "7", "4", "2", "2", "4", "8", "10", "12", "14", "16", "18", "20", "21", "23", "25", "26", "28", "30", "33"];
+
+        var songshan = ["28", "28", "28", "24", "24", "24", "20", "20", "20", "16", "16", "16", "20", "24", "24", "28", "28", "28", "32", "32", "32", "32", "28", "28",
+            "24", "20", "20", "20", "20", "20", "24", "20", "20", "20", "20", "20", "20", "24", "24", "28", "28", "28", "32", "32", "32", "32", "36", "36", "36", "40", "44", "44",
+            "32", "32", "32", "32", "28", "28", "24", "24", "24", "24", "24", "20", "20", "20", "16", "16", "16", "16",
+            "28", "28", "28", "24", "24", "20", "20", "16", "20", "20", "20", "20", "24", "24", "24", "28", "28", "32", "32", "36", "36", "24", "24", "28", "28", "28",
+            "40", "40", "36", "36", "32", "32", "32", "28", "28", "24", "20", "20", "20", "20", "16", "20", "20", "20", "20", "24", "24", "28", "28"];
+
+        var songshan_time = ["30", "28", "27", "25", "23", "21", "19", "17", "15", "13", "7", "13", "16", "19", "21", "23", "25", "27", "28", "30", "32", "34", "36", "33",
+            "25", "23", "22", "15", "21", "15", "21", "15", "19", "17", "15", "11", "15", "16", "19", "21", "23", "25", "27", "28", "30", "32", "34", "39", "36", "39", "40", "43", "46", "49",
+            "36", "34", "32", "39", "31", "29", "27", "24", "23", "21", "19", "18", "16", "14", "11", "9", "7", "5", "3",
+            "32", "30", "28", "26", "21", "15", "13", "9", "12", "14", "16", "18", "21", "23", "24", "27", "29", "31", "34", "36", "39", "21", "23", "25", "27", "30",
+            "41", "38", "36", "33", "31", "29", "27", "25", "23", "19", "16", "15", "16", "13", "13", "19", "21", "23", "24", "26", "28", "30", "33"];
+
+        function cmp_lower_cost() {
             //預設從基隆出發
-            //台北-南港 火車票價: 自強號 $23, 莒光 $18, 區間車 $15
-            var print_cost = "", t_taipei = "", t_nangang = "";//initialize
+            //台北-南港 火車票價: 自強號 $23, 區間車 $15, 莒光 $18
+            //南港-基隆 火車票價: 自強號 $43, 區間車 $28
+            //台北-基隆 火車票價: 自強號 $64, 區間車 $41
+            var index = document.getElementById("location").value;
+            var print_cost = "", t_taipei = "", t_nangang = "", t_banqiao = "", t_songshan = "";//initialize
             var message1 = "", station1 = "";
 
-            t_taipei += taipei[document.getElementById("location").value];
-            t_nangang += nangang[document.getElementById("location").value];
+            t_taipei += taipei[index];
+            t_nangang += nangang[index];
+            t_banqiao += banqiao[index];
+            t_songshan += songshan[index];
+
+            if (document.getElementById("location").value == 000) {//easter egg
+                alert("OKOK");
+            }
+
+            if (document.getElementById("location").value == 900) {//user doesn't choose any destination
+                alert("忘記選擇目的地囉！！")
+                return;
+            }
 
             if (t_taipei > t_nangang) {
                 print_cost = t_nangang;
                 station1 = "南港";
+                print_cost = parseInt(print_cost) + 28;
             }
             else if (t_taipei <= t_nangang) {
                 print_cost = t_taipei;
                 station1 = "臺北";
+                print_cost = parseInt(print_cost) + 41;
             }
-            message1 += "<p>" + print_cost + "</p>" + station1 + "<hr>";
+            message1 += "<p>總共需要花費  <span>$  " + print_cost + "</span></p>" + "<p> 建議從 <span style='color: red;'>"
+                + station1 + "站</span> 換車</p>" + "<hr>";
 
             document.getElementById("message1").innerHTML = message1;
         }
         function cmp_lower_time() {
             var print_time = "", taipei = "", nangang = "";
             var message2 = "", station2 = "";
-
+            //預設從基隆出發
+            //台北-南港 火車時間: 自強號 11, 區間車 10, 莒光 13
+            //南港-基隆 火車時間: 自強號 31, 區間車 32
+            //台北-基隆 火車時間: 自強號 35, 區間車 50
             taipei += taipei_time[document.getElementById("location").value];
             nangang += nangang_time[document.getElementById("location").value];
+
+            if (document.getElementById("location").value == 000) {
+                alert("OKOK");
+            }
+
+            if (document.getElementById("location").value == 900) {//user doesn't choose any destination
+                alert("忘記選擇目的地囉！！")
+                return;
+            }
 
             if (taipei > nangang) {
                 print_time = nangnag;
                 station2 = "南港";
+                print_time = parseInt(print_time) + 32;
             }
             else {
                 print_time = taipei;
                 station2 = "臺北";
+                print_time = parseInt(print_time) + 50;
             }
-            message2 += "<p>" + print_time + "</p>" + station2 + "<hr>";
+            message2 += "<p>總共需要約  <span>" + print_time + "  分鐘</span></p>" + "<p> 建議從 <span style='color: red;'>"
+                + station2 + "站</span> 換車</p>" + "<hr>";
             document.getElementById("message2").innerHTML = message2;
         }
     </script>
@@ -160,9 +230,9 @@ Released   : 20130902
         <div id="header">
             <div id="menu">
                 <ul>
-                    <li class="current_page_item"><a href="#" accesskey="1" title="">主頁面</a></li>
-                    <li><a href="#location" accesskey="2" title="">最少車資</a></li>
-                    <li><a href="#location" accesskey="3" title="">最省時間</a></li>
+                    <li class="current_page_item"><a href="#" accesskey="1" title="">介紹</a></li>
+                    <li><a href="#location" accesskey="2" title="">開始</a></li>
+                    <!--    <li><a href="#location" accesskey="3" title="">最省時間</a></li>  -->
                     <li><a href="#copyright" accesskey="4" title="">參考資料</a></li>
                 </ul>
             </div>
@@ -185,11 +255,12 @@ Released   : 20130902
             </div> -->
             <div id="welcome">
                 <div class="title">
-                    <h2>Transportation from Keelung to Taipei</h2>
+                    <h1>Transportation from Keelung to Taipei</h1>
                     <!-- <span class="byline">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna
                             congue</span> -->
                 </div>
-                <p style="font-size: 120%;">你是一個精打計算的人嗎？</p>
+                <h2 style="font-size: 120%;">你是一個精打細算的人嗎？</h2>
+                <h3 style="font-size: 120%;">從基隆到臺北不知道應該選擇哪一站轉捷運嗎？</h3>
                 <h1>
                     <p style="font-family:Tahoma, sans-serif; color:#2c3e50">歡迎您來到這個網站</p>
                 </h1>
@@ -198,6 +269,8 @@ Released   : 20130902
                     <li><a href="#" class="button">Etiam posuere</a></li>
                 </ul>
             </div>
+            <hr>
+            <hr>
             <div id="featured">
                 <div class="title">
                     <h2>操作說明</h2>
@@ -225,11 +298,13 @@ Released   : 20130902
                             eleifend. Etiam non felis. Donec ut ante.</p>
                     </li>
                 </ul>
+                <hr>
+                <hr>
             </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br>
             <div>
                 <select name="location" id='location'>
-                    <option>----請選擇----</option>
+                    <option value="900">----請選擇----</option>
                     <optgroup style='background-color: #CC9900;' label='BR 文湖線'>
                         <option value="0" style='background-color: #CC9900;' value='BR01-019'>BR01 動物園</option>
                         <option value="1" style='background-color: #CC9900;' value='BR02-018'>BR02 木柵</option>
@@ -285,6 +360,7 @@ Released   : 20130902
                         <option value="49" style='background-color: #FD5B56;' value='R26-069'>R26 竹圍</option>
                         <option value="50" style='background-color: #FD5B56;' value='R27-070'>R27 紅樹林</option>
                         <option value="51" style='background-color: #FD5B56;' value='R28-071'>R28 淡水</option>
+                        <option value="000" style='background-color: #FD5B56;'>RRR 孩子們的快樂天堂 RRR</option>
                     </optgroup>
 
                     <optgroup style='background-color: #009900;' label='G 松山新店線'>
@@ -364,9 +440,17 @@ Released   : 20130902
                         <option value="120" style='background-color: #398AFC;' value='BL23-031'>BL23 南港展覽館</option>
                 </select>
                 <br>
-                <button onclick="cmp_lower()">start_min_cost</button><br>
-                <button onclick="cmp_lower_time()">start_min_time</button><br>
-                <button onclick="window.location.reload()">reload</button><br>
+                <img src="image/start.jpg" style="height: 50px; width: 50px;" onclick="cmp_lower_cost()">
+                <img src="image/start.jpg" style="height: 50px; width: 50px;" onclick="cmp_lower_time()">
+
+                <!--        <button onclick="cmp_lower_cost()">start_min_cost</button><br>-->
+                <!--            <button onclick="cmp_lower_time()">start_min_time</button><br>  -->
+
+                <img src="image/clear.jpg" style="height:50px; width: 50px;" onclick="document.getElementById('message2').innerHTML='';
+                        document.getElementById('message1').innerHTML=''"><br>
+
+                <!--            <button onclick="document.getElementById('message2').innerHTML = '';
+                             document.getElementById('message1').innerHTML = '';">clear</button><br>  -->
             </div>
 
             <h1>
@@ -376,7 +460,7 @@ Released   : 20130902
             <h1>
                 <div id="message2"></div>
             </h1>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
             <div id="copyright">
                 <span style="font-size: 130%;">&copy; 參考資料</span>
                 <span><a href="https://tpu.thinkpower.com.tw/tpu/articleDetails/920" target="_blank">自動輪播圖片</a></span>
@@ -384,6 +468,8 @@ Released   : 20130902
                         target="_blank">台北捷運票價及乘車時間</a></span>
                 <span><a href="http://www.jq22.com" target="_blank">jQuery插件庫</a></span>
             </div>
+            <br><a href="image/mrt_map.jpg" style="text-decoration: none;">臺北捷運路網圖</a><br>
+            <a href="#menu" style="background-color: rgb(241, 184, 28); text-decoration: none;">回頂部</a>
         </div>
     </div>
 </body>
