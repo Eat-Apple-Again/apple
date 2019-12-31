@@ -19,7 +19,6 @@ Released   : 20130902
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
     <link href="default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="humanmsg.css" media="screen" type="text/css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css">
     </link>
@@ -73,7 +72,6 @@ Released   : 20130902
             text-transform: uppercase;
             margin: 350px 0;
             font-size: 22px;
-
         }
 
         @keyframes bganimation {
@@ -109,52 +107,7 @@ Released   : 20130902
             color: black;
         }
     </style>
-    <SCRIPT LANGUAGE="JavaScript">
 
-        cookie_name = "Counter_Cookie";
-
-        function doCookie() {
-            if (document.cookie) { index = document.cookie.indexOf(cookie_name); }
-            else { index = -1; }
-
-            var expires = "Monday, 04-Apr-2010 05:00:00 GMT"
-
-            if (index == -1) { document.cookie = cookie_name + "=1; expires=" + expires; }
-            else {
-                countbegin = (document.cookie.indexOf("=", index) + 1);
-                countend = document.cookie.indexOf(";", index);
-                if (countend == -1) {
-                    countend = document.cookie.length;
-                }
-                count = eval(document.cookie.substring(countbegin, countend)) + 1;
-
-                document.cookie = cookie_name + "=" + count + "; expires=" + expires;
-            }
-        }
-
-        function gettimes() {
-            if (document.cookie) {
-                index = document.cookie.indexOf(cookie_name);
-                if (index != -1) {
-                    countbegin = (document.cookie.indexOf("=", index) + 1);
-                    countend = document.cookie.indexOf(";", index);
-                    if (countend == -1) {
-                        countend = document.cookie.length;
-                    }
-                    count = document.cookie.substring(countbegin, countend);
-                    if (count == 1) {
-                        return (count + " 次");
-                    } else {
-                        return (count + " 次");
-                    }
-                }
-            }
-            return ("0 次");
-        }
-
-            // done hiding script --> 
-
-    </SCRIPT>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="humanmsg.js"></script>
     <script type="text/javascript" src="js/ToolTip.js"></script>
@@ -167,11 +120,9 @@ Released   : 20130902
                 nav: false,
             });
         });
-        $("button").click(function () {
-            $("p").hide(100);
-        });
+
     </script>
-    <script>
+    <script type="text/javascript">
         var taipei = ["28", "24", "24", "24", "20", "20", "20", "16", "16", "16", "16", "16", "20", "20", "24", "24", "28", "28", "28", "32", "28", "28", "28", "24",
             "20", "20", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "20", "20", "20", "20", "24", "24", "24", "28", "28", "28", "32", "32", "36", "40",
             "24", "24", "24", "24", "24", "20", "20", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "20", "20",
@@ -252,7 +203,6 @@ Released   : 20130902
                 else if (localStorage.counting == 6)
                     alert("再按一次看看阿\n先說掰拉~~");
                 else if (localStorage.counting == 7) {
-                    window.opener = NULL;
                     window.close();
                 }
             }
@@ -331,7 +281,6 @@ Released   : 20130902
             document.getElementById("message1").innerHTML = message1;
         }
     </script>
-
 </head>
 
 <body>
@@ -355,17 +304,15 @@ Released   : 20130902
                 <img src="1.jpg" alt="" width="350" height="250"> 
                 <img src="2.jpg" alt="" width="350" height="250">
                 <img src="3.jpg" alt="" width="350" height="250">
-            </div> -->douliu_trainStation
+            </div> -->
             <div class="owl-carousel">
-                <div class="item"><img src="image/66.jpg"></div>
                 <div class="item"><img src="image/1.jpg"></div>
                 <div class="item"><img src="image/222.jpg"></div>
                 <div class="item"><img src="image/4.jpg"></div>
                 <div class="item"><img src="image/55.jpg"></div>
+                <div class="item"><img src="image/66.jpg"></div>
             </div>
-            <!-- <div id="banner">
-                <img src="1.jpg" alt="" class="image-full" />
-            </div> -->
+
             <div id="welcome">
                 <div class="title">
                     <h1>Transportation from Keelung to Taipei</h1>
@@ -379,8 +326,8 @@ Released   : 20130902
                 <!-- <h1>
                     <div style="font-family:Tahoma, sans-serif; color:#2c3e50">歡迎您來到這個網站！！</div>
                 </h1> -->
-                <ul class="actions">
-                    <li><a href="#" class="button" onclick="self.close();">Etiam posuere</a></li>
+                <ul>
+                    <li><p class="button" onclick="window.close();">Easter egg</p></li>
                 </ul>
             </div>
 
@@ -391,24 +338,24 @@ Released   : 20130902
                 <ul class="style1">
                     <li class="first">
                         <p class="date"><a href="#"><b>第一步</b></a></p>
-                        <h2>選擇方案</h2>
-                        <p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et,
-                            tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper
-                            eleifend. Etiam non felis. Donec ut ante.</p>
+                        <h1>選擇目的地</h1>
+                        <p>透過下拉式選單</p>
+                        <p>找到要去的捷運站</p>
+                        <p></p>
                     </li>
                     <li>
                         <p class="date"><a href="#"><b>第二步</b></a></p>
-                        <h2>點選終點站</h2>
-                        <p>Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus
-                            egestas at sem. Mauris quam enim, molestie. Donec leo, vivamus fermentum nibh in augue
-                            praesent congue rutrum.</p>
+                        <h1>使用按鈕</h1>
+                        <p>點選start 開始計算 自動產生結果</p>
+                        <p>點選reset 清除結果</p>
                     </li>
                     <li>
                         <p class="date"><a href="#"><b>第三步</b></a></p>
-                        <h2>更多功能</h2>
-                        <p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et,
-                            tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper
-                            eleifend. Etiam non felis. Donec ut ante.</p>
+                        <h1>查看</h1>
+                        <p></p>
+                        <p>下方產生經由各站轉運</p>
+                        <p>需要花費的時間與車費</p>
+                        <p>提供使用者比較</p>
                     </li>
                 </ul>
                 <hr>
@@ -572,6 +519,7 @@ Released   : 20130902
             <h1>
                 <div id="message2"></div>
             </h1>
+            <button onclick="window.close()">8888</button>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <div id="copyright">
 
@@ -585,7 +533,6 @@ Released   : 20130902
             <br><br>
             <a href="#menu" style="background-color: rgb(241, 184, 28); text-decoration: none;">回頂部</a>
         </div>
-        <SCRIPT LANGUAGE="javascript"> document.write("謝謝您光臨本站 " + gettimes() + " 。"); </SCRIPT>
     </div>
 </body>
 
