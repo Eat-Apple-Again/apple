@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>看電影學英文-期末作品</title>
+
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);
+
+        body {
+            background-color: black;
+        }
+
+        h1.bb {
+            color: dimgray;
+        }
+
+        span.an {
+            color: navy;
+        }
+
+        span.v {
+            color: firebrick;
+            font-size: 150%;
+        }
+
+        div {
+            text-align: center;
+            font-family: 'cwTeXKai', 'Perpetua', serif
+        }
+
+        a {
+            text-decoration: none;
+
+        }
+    </style>
+    <script>
+        var pictures = ["Cat", "Harry", "Jacky", "Yao", "macbeth2"];
+        var adj = ["剛起床的", "我們的", "準備去特洛伊的", "沉浸在酒酣耳熱生活的", "直到上線前一天", "(雙手一攤)"];
+        var noun = ["Macbeth", "Lady Macbeth", "Achilles", "Helen", "Paris", "Elizabeth Bennet", "Fitzwilliam Darcy", "Jane Bennet", "Kitty Bennet", "Mary Bennet"];
+        var verb = ["去攻打特洛伊了", "急著找廁所", "說他肚子不舒服", "突然開始放長假", "去生小孩了", "和 Bingley 私奔了", "被打到屁滾尿流", "還沒起床"];
+
+        function pick_random() {
+            var index = Math.floor(Math.random() * 5);
+            var index1 = Math.floor(Math.random() * 6);
+            var index2 = Math.floor(Math.random() * 10);
+            var index3 = Math.floor(Math.random() * 8);
+            var message = "";
+
+            message += "<h1><span class = 'an'>" + adj[index1] + noun[index2] + "</span><span class='v'>"
+                + verb[index3] + "</span></h1>" + "<img src = " + pictures[index] + ".jpg>";
+
+
+            //找到id為"display"的網頁元素物件(就是那個div區塊的物件)
+            var divObject = document.getElementById("display");
+            //將div區塊的內容改為我們準備好的html片段，網頁上的div就會顯示新的內容
+            divObject.innerHTML = message;
+        }
+
+        function easter() {
+            var message2 = "";
+            var macbeth_intro, pride_intro, troy_intro, elysium_intro;
+
+            alert("Well done !!");
+            message2 = "<h1>電影介紹連結<h1>"
+                + "<a href='https://zh.wikipedia.org/wiki/%E7%89%B9%E6%B4%9B%E4%BC%8A%EF%BC%9A%E6%9C%A8%E9%A6%AC%E5%B1%A0%E5%9F%8E' target='blank'>Troy</a><br>"
+                + "<a href='https://zh.wikipedia.org/wiki/%E9%A6%AC%E5%85%8B%E7%99%BD' target='blank'>Macbeth</a><br>"
+                + "<a href='https://zh.wikipedia.org/wiki/%E5%82%B2%E6%85%A2%E8%88%87%E5%81%8F%E8%A6%8B_(2005%E5%B9%B4%E9%9B%BB%E5%BD%B1' target='blank')>Pride and Prejudice</a><br>"
+                + "<a href='https://zh.wikipedia.org/wiki/%E6%A5%B5%E6%A8%82%E4%B8%96%E7%95%8C_(%E9%9B%BB%E5%BD%B1)' target='blank'>Elysium</a><br>"
+                + "<br><br><p style='color:white;'>Edicted by 蕭皓天(Jim)</p><p style='color:white;'>00757044</p><br><br><br>";
+
+            //找到id為"display"的網頁元素物件(就是那個div區塊的物件)
+            var divObject = document.getElementById("main");
+            //將div區塊的內容改為我們準備好的html片段，網頁上的div就會顯示新的內容
+            divObject.innerHTML = message2;
+        }
+        function egg() {
+            alert("Good work " + name + ".");
+            alert('You find an "easter egg" !!');
+            alert('This is a fake button , please find the true one in this page.\nAnd you will get more information about these movies.');
+        }
+        window.addEventListener("load", pick_random, false);
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <h1 class="bb">當角色們走錯戲棚...</h1>
+        <p id="display"></p><br><br><br><br><br>
+        <script>
+            var name = window.prompt("Please input your name :") || "Guest";
+
+            alert("Welcome to this webpage.\nThis webpage will produce a sentence\nif the user press 'renew' or 'F5' renew the page.");
+            alert("The sentence will be a little funny and unbelievable.\nJust have fun ！！")
+        </script>
+        <button onclick="egg()">
+            Movie Introduction
+        </button>
+        <div class="static">
+            <button onclick="pick_random()">Create new sentence</button><br>
+        </div>
+        <p style="color:black;" onclick="easter()"> Movie Introduction link</p>
+    </div>
+</body>
+
+</html>
