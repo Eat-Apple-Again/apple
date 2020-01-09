@@ -34,15 +34,19 @@
             text-decoration: none;
 
         }
+
+        #new {
+            border-radius: 45%;
+        }
     </style>
     <script>
-        var pictures = ["Cat", "Harry", "Jacky", "Yao", "macbeth2"];
+        var pictures = ["Cat", "Harry", "Jacky", "Yao", "macbeth1", "macbeth2", "pride1", "troy1", "troy2"];
         var adj = ["剛起床的", "我們的", "準備去特洛伊的", "沉浸在酒酣耳熱生活的", "直到上線前一天", "(雙手一攤)"];
         var noun = ["Macbeth", "Lady Macbeth", "Achilles", "Helen", "Paris", "Elizabeth Bennet", "Fitzwilliam Darcy", "Jane Bennet", "Kitty Bennet", "Mary Bennet"];
         var verb = ["去攻打特洛伊了", "急著找廁所", "說他肚子不舒服", "突然開始放長假", "去生小孩了", "和 Bingley 私奔了", "被打到屁滾尿流", "還沒起床"];
 
         function pick_random() {
-            var index = Math.floor(Math.random() * 5);
+            var index = Math.floor(Math.random() * 9);
             var index1 = Math.floor(Math.random() * 6);
             var index2 = Math.floor(Math.random() * 10);
             var index3 = Math.floor(Math.random() * 8);
@@ -98,7 +102,7 @@
             Movie Introduction
         </button>
         <div class="static">
-            <button onclick="pick_random()">Create new sentence</button><br>
+            <button onclick="pick_random()" id="new">Create new sentence</button><br>
         </div>
         <p style="color:black;" onclick="easter()"> Movie Introduction link</p>
     </div>
